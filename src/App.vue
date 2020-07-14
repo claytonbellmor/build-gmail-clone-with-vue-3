@@ -1,23 +1,24 @@
 <template>
-  <div id="app">      
-    <Suspense>
-      <template #default>
-        <MailScreen />
-      </template>
-      <template #fallback>
-        Loading...
-      </template>
-    </Suspense>
-  </div>
-</template>
+  <h1>VMail Inbox</h1>
 
+  <suspense>
+    <template #default>
+      <MailTable />
+    </template>
+    <template #fallback>
+      Loading...
+    </template>
+  </suspense>
+  
+</template>
+  
 <script>
-import MailScreen from '@/components/MailScreen.vue';
+import MailTable from '@/components/MailTable.vue'
 
 export default {
   name: 'App',
   components: {
-    MailScreen
+    MailTable
   }
 };
 </script>
